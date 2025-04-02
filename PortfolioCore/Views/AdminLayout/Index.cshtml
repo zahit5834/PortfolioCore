@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html lang="en">
+@Html.Partial("PartialHead", "AdminLayout")
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        @Html.Partial("PartialSidebar", "AdminLayout")
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @RenderBody()
+        </div>
+    </div>
+    @Html.Partial("PartialScript", "AdminLayout")
+</body>
+</html>
