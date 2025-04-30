@@ -22,10 +22,14 @@ Projede, yetenekleriniz, deneyimleriniz, çalışmalarınız ve gelen mesajlar g
 
 ## 🖼️ Uygulama Görselleri
 
-| Dashboard | Yetenekler | Deneyimler |
+| Dashboard |
 |----------|------------|-------------|
 | ![image](https://github.com/user-attachments/assets/9970b8ea-c129-4567-9025-63bea596bae1)|
+| Yetenekler |
+|----------|------------|-------------|
  | ![image](https://github.com/user-attachments/assets/b27aa375-5f04-42d6-9471-e5a666ff3904)|
+ | Deneyimler |
+|----------|------------|-------------|
  | ![image](https://github.com/user-attachments/assets/62ba2033-280a-4b32-91f9-03c4b27851e1)|
  |
 
