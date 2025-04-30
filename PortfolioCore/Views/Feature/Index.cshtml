@@ -1,0 +1,19 @@
+﻿@model PortfolioCore.Entities.Feature
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Öne Çıkanlar Sayfası</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="FeatureId" />
+    <label>İsim Soyisim</label>
+    <input type="text" class="form-control" asp-for="NameSurname" style="border:1px solid black;" />
+    <br />
+    <label>Alt Başlık</label>
+    <input type="text" class="form-control" asp-for="Workspaces" style="border:1px solid black;" />
+    <label class="SubTitle">Çalışma alanları arasında virgül ile ayrılmalıdır. Örnek: "HTML,CSS,C#"</label>
+    <br />
+    <button class="btn btn-success">Deneyim Kaydet</button>
+</form>

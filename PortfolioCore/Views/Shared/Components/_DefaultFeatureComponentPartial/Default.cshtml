@@ -1,20 +1,20 @@
-﻿<section id="hero" class="hero section light-background">
+﻿@model List<Feature>
+<section id="hero" class="hero section light-background">
 
     <img src="~/MyResume-1.0.0/assets/img/hero-bg.jpg" alt="">
 
     <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-            <div class="col-lg-9">
-                <h2>Mehmet Zahit Akbulut</h2>
-                <p>Çalışma Alanlarım <span class="typed" data-typed-items=".Net Backend Developer, Büyük Veri Analizi, Angular Js FrontEnd Developer">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-                <div class="social-links">
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
+        @foreach(var item in Model)
+        {
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <h2>@item.NameSurname</h2>
+                    <p>Çalışma Alanlarım <span class="typed" data-typed-items="@item.Workspaces">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+                    @await Component.InvokeAsync("_DefaultSocialMediaComponentPartial")
                 </div>
             </div>
-        </div>
+        }
+        
     </div>
 
 </section>

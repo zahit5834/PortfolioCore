@@ -1,0 +1,50 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Hakkımda Sayfası</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="AboutId" />
+    <label>Açıklama</label>
+    <input type="text" class="form-control" asp-for="Description" style="border:1px solid black;" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" class="form-control" asp-for="Title" style="border:1px solid black;" />
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <label>Doğum Tarihi</label>
+            <input type="text" class="form-control" asp-for="Birthday" style="border:1px solid black;" />
+            <br />
+            <label>Web Sitesi</label>
+            <input type="text" class="form-control" asp-for="Website" style="border:1px solid black;" />
+            <br />
+            <label>Telefon</label>
+            <input type="text" class="form-control" asp-for="Phone" style="border:1px solid black;" />
+            <br />
+            <label>Adres</label>
+            <input type="text" class="form-control" asp-for="Adress" style="border:1px solid black;" />
+            <br />
+        </div>
+        <div class="col-lg-6">
+            
+            <label>Yaş</label>
+            <input type="text" class="form-control" asp-for="Age" style="border:1px solid black;" />
+            <br />
+            <label>Derece</label>
+            <input type="text" class="form-control" asp-for="Degree" style="border:1px solid black;" />
+            <br />
+            <label>E-Posta</label>
+            <input type="text" class="form-control" asp-for="Email" style="border:1px solid black;" />
+            <br />
+            <label>Görsel Yolu</label>
+            <input type="text" class="form-control" asp-for="ImageUrl" style="border:1px solid black;" />
+            <br />
+        </div>
+    </div>
+    <button class="btn btn-success">Güncelle</button>
+</form>
+

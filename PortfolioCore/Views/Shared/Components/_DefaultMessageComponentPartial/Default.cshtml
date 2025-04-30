@@ -1,0 +1,82 @@
+﻿<div class="col-lg-8">
+    <form id="contactForm" action="/Message/SentMessage" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+        <div class="row gy-4">
+
+            <div class="col-md-6">
+                <input type="text" name="NameSurname" class="form-control" placeholder="İsim Soyisim" required="">
+            </div>
+
+            <div class="col-md-6 ">
+                <input type="email" class="form-control" name="Email" placeholder="E-Posta" required="">
+            </div>
+
+            <div class="col-md-12">
+                <input type="text" class="form-control" name="Subject" placeholder="Konu" required="">
+            </div>
+
+            <div class="col-md-12">
+                <textarea class="form-control" name="MessageDetail" rows="6" placeholder="Mesajınız" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <!-- Bunlar artık kullanılmayacak -->
+                <div class="loading" style="display: none;">Loading</div>
+                <div class="error-message" style="display: none;"></div>
+                <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
+
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const form = this;
+      const formData = new FormData(form);
+
+      // Eski div'leri bulalım
+      const loading = form.querySelector('.loading');
+      const errorMessage = form.querySelector('.error-message');
+      const sentMessage = form.querySelector('.sent-message');
+      errorMessage.style.display = 'none'; // Hata mesajını gizle
+      // Göndermeden önce loading gösterelim
+      loading.style.display = 'block';
+      errorMessage.style.display = 'none';
+      sentMessage.style.display = 'none';
+
+      fetch('/Message/SentMessage', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        loading.style.display = 'none'; // Loading kapat
+
+        if (response.ok) {
+          Swal.fire({
+            title: 'Gönderildi!',
+            text: 'Mesajınız başarıyla gönderildi.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
+          form.reset(); // Formu sıfırla
+        } else {
+          throw new Error('Bir hata oluştu.');
+        }
+      })
+      .catch(error => {
+        loading.style.display = 'none'; // Loading kapat
+
+        Swal.fire({
+          title: 'Hata!',
+          text: 'Mesaj gönderilemedi.',
+          icon: 'error',
+          confirmButtonText: 'Tamam'
+        });
+      });
+    });
+</script>

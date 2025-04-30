@@ -1,0 +1,25 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "MessageDetail";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Mesaj Detayları</h1>
+
+@foreach (var item in Model)
+{
+    <div class="form-control">
+        <h6>Gönderen:</h6>
+        <h6>@item.NameSurname</h6>
+        <br />
+        <h6>Tarih:</h6>
+        <h6>@item.SendDate.ToString("dd:MMMM:yyyy HH:mm")</h6>
+        <br />
+        <h6>Konu:</h6>
+        <h6>@item.Subject</h6>
+        <br />
+        <h6>Mesaj:</h6>
+        <h6>@item.MessageDetail</h6>
+        <br />
+    </div>
+}
